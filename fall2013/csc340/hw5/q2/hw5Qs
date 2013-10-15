@@ -1,0 +1,27 @@
+Questions:
+
+    Question 1 Modify the List class posted under Week 7 such that the data items stored in the data member items[MAX_LIST ] are always maintained in ascending order. Specifically, you need to
+        Revise the insert() member function to have only one parameter that holds the value to insert, i.e., change the function prototype to
+        void insert(const ListItemType& newItem)
+        throw(ListIndexOutOfRangeException, ListException);
+
+        Revise the remove() function to have only one parameter that holds the item to remove, i.e., change the function signature to
+        void remove(const ListItemType & itemToRemove)
+        throw(ListIndexOutOfRangeException);
+
+        Please use the binary search algorithm as the first step in your implementation to identify the location of the itemToRemove.
+
+        In addition, please also add a member function print() that prints out all the items on the list. Make sure this function is read-only. a
+
+Requirements: Please use separate compilation. In the main() function, make sure you include code to test each member function you have declared and implemented. This can be achieved by either invoking the functions in a hard-coded manner or by providing a simple yet friendly user I/O. In the latter case, your I/O will allow the user to choose which member function to test.
+
+Question 2 Revise the List ADT posted under Week 7 to include the following overloaded operators. (Remember that we assume each List object corresponds to a vector in algebra.)
+
+    overload the + operator as a member function to add two vectors
+    overload the - operator as a member function to subtract one vector from another
+    overload the * operator as a member function to multiply a vector by a real number
+    overload the / as a member function to divide a vector by a real number
+    overload the prefix and postfix ++ operators as two member functions to increment each element in a vector by 1
+    overload the << operator to print out a vector
+
+Requirements: Please use separate compilation. In the main() function, make sure that you include code to test each and every constructor and member function. Don't forget proper exception handling. 
