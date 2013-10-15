@@ -1,9 +1,9 @@
 /*
   Name: list.h--consisting of the interface of List
   Copyright: 
-  Author: 
-  Date: 19/09/11 18:42
-  Description: 
+  Author: Alex Ryner
+  Date: 10/14/13
+  Description: header file for a list with overloaded operators
 */
 
 /** @file ListAexcept.h */
@@ -49,18 +49,27 @@ public:
    void retrieve(int index, ListItemType& dataItem) const
         throw(ListIndexOutOfRangeException);
 
-   List operator+(List rightSide) const;
+   /** @throw ListIndexOutOfRangeException if the vectors do not have matching lengths */
+   List operator+(List rightSide) const
+      throw(ListIndexOutOfRangeException);
 
+   /** @throw None. */
    List& operator++();
 
+   /** @throw None. */
    List operator++(int blank);
 
-   List operator-(List rightSide) const;
+   /** @throw ListIndexOutOfRangeException if the vectors do not have matching lengths */
+   List operator-(List rightSide) const
+      throw(ListIndexOutOfRangeException);
 
+   /** @throw None. */
    List operator*(ListItemType rightSide) const;
 
+   /** @throw None. */
    List operator/(ListItemType rightSide) const;
 
+   /** @throw None. */
    friend ostream& operator<<(ostream& outputStream, const List& out);
 
 private:

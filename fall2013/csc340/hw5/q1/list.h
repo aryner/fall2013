@@ -1,9 +1,9 @@
 /*
   Name: list.h--consisting of the interface of List
   Copyright: 
-  Author: 
-  Date: 19/09/11 18:42
-  Description: 
+  Author: Alex Ryner
+  Date: 10/14/13
+  Description: header file for a sorted list
 */
 
 /** @file ListAexcept.h */

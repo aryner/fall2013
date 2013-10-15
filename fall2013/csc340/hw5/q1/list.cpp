@@ -1,9 +1,9 @@
 /*
   Name: list.cpp--implementing the member functions
   Copyright: 
-  Author: 
-  Date: 19/09/11 18:43
-  Description: 
+  Author: Alex Ryner
+  Date: 10/14/13
+  Description: Implementation of a sorted list
 */
 
 
@@ -39,6 +39,7 @@ void List::insert(const ListItemType& newItem)
 
    else {
       index = size-1;
+      //loop shifts the contents of the list to make room for the new element
       while(items[index] > newItem && index >= 0) {
          items[index+1] = items[index];
          index--; 
@@ -47,12 +48,7 @@ void List::insert(const ListItemType& newItem)
    }
 
    items[index] = newItem;
-/*
-   for (int pos = size; pos >= index; --pos)
-      items[translate(pos+1)] = items[translate(pos)];
-      // insert new item
-   items[translate(index)] = newItem;
-*/
+
    ++size;  // increase the size of the list by one
 
 }  // end insert
@@ -61,13 +57,14 @@ void List::insert(const ListItemType& newItem)
 void List::remove(const ListItemType& newItem) 
      throw(ListIndexOutOfRangeException)
 {
-   ListIndexOutOfRangeException outOfRange;
+   ListIndexOutOfRangeException outOfRange("Item not found");
 
    int start = 0;
    int end = size-1;
    int mid;
    bool found = false;
 
+   //binary search fo the element to be removed
    while(!found && start <= end) {
       mid = start + (end-start)/2;
       if (items[mid] == newItem)
@@ -79,13 +76,14 @@ void List::remove(const ListItemType& newItem)
    }
 
    if (found){
+      //shifts the contents of the list to fill in the removed spot
       for(int i=mid; i<size; i++)
          items[i] = items[i+1];
       size--;
    }  
 
    else
-      cout << "Could not remove, item not found" << endl;
+      throw outOfRange;
 }  // end remove
 
 void List::retrieve(int index, ListItemType& dataItem) const

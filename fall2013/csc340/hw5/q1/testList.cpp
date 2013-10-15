@@ -1,9 +1,9 @@
 /*
   Name: testList.cpp
   Copyright: 
-  Author: 
-  Date: 19/09/11 18:49
-  Description: 
+  Author: Alex Ryner
+  Date: 10/14/13
+  Description: Test program for a sorted list
 */
 
 #include <stdlib.h>
@@ -17,11 +17,11 @@ void remove(List &);
 
 int main()
 {
-
+	//list to be used in the test
 	List aList;
-	ListItemType dataItem;
 
 	try{
+		//initial loading of the list
 		for(int i=0; i<5; i++) {
 			aList.insert(rand()%10);
 		}
@@ -67,6 +67,7 @@ int main()
 
 }
 
+//function to test the insert function
 void insert(List &list) {
 	char choice = 'i';
 	int num;
@@ -92,6 +93,7 @@ void insert(List &list) {
 	}
 }
 
+//function to test the remove function 
 void remove(List &list) {
 	char choice = 'r';
 	int num;

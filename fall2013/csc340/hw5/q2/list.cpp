@@ -1,9 +1,9 @@
 /*
   Name: list.cpp--implementing the member functions
   Copyright: 
-  Author: 
-  Date: 19/09/11 18:43
-  Description: 
+  Author: Alex Ryner
+  Date: 10/14/13
+  Description: Implementing functions for a list that overloads operators
 */
 
 
@@ -88,7 +88,14 @@ void List::retrieve(int index, ListItemType& dataItem) const
 }  // end retrieve
 
 List List::operator+(List rightSide) const
+     throw(ListIndexOutOfRangeException)
 {
+
+   ListIndexOutOfRangeException range("The vectors do not have matching lengths");
+
+   if(size != rightSide.getLength())
+	throw range;
+
    List result;
    ListItemType temp;
 
@@ -104,7 +111,7 @@ List List::operator+(List rightSide) const
 List& List::operator++()
 {
 	for(int i=0; i<size; i++) {
-		items[i] = items[i]++;
+		items[i] = items[i]+1;
 	}
 	return *this;
 }
@@ -113,13 +120,19 @@ List List::operator++(int blank)
 {
 	List result = *this;
 	for(int i=0; i<size; i++) {
-		items[i] = items[i]++;
+		items[i] = items[i]+1;
 	}
 	return result;
 }
 
 List List::operator-(List rightSide) const
+     throw(ListIndexOutOfRangeException)
 {
+   ListIndexOutOfRangeException range("The vectors do not have matching lengths");
+
+   if(size != rightSide.getLength())
+	throw range;
+
    List result;
    ListItemType temp;
 

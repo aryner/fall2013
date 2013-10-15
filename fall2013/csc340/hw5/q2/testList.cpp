@@ -1,9 +1,9 @@
 /*
   Name: testList.cpp
   Copyright: 
-  Author: 
-  Date: 19/09/11 18:49
-  Description: 
+  Author: Alex Ryner
+  Date: 10/14/13
+  Description: Progam to test overloaded operators
 */
 
 #include <stdlib.h>
@@ -21,10 +21,11 @@ void post(List, List);
 
 int main()
 {
+	//lists to test overloaded operators on
 	List aList, bList;
-	ListItemType dataItem;
 
 	try {
+		//initializing the lists
 		for (int i=0; i<5; i++) {
 			aList.insert(i,rand()%10);
 			bList.insert(i,rand()%10);
@@ -38,6 +39,7 @@ int main()
 	bool play = true;
 	char choice;
 	cout << "**********Welcome to the Q2 test program!***********" << endl;
+	//while loop to allow the user to test each overloaded operator
 	while (play) {	
 		cout << "Enter a key from the menu below or q to quit" << endl;
 		cout << "*=multiply, /=divide, +=add, -=subtract, a=list++, b=++list, d=display" << endl;
@@ -79,7 +81,7 @@ int main()
 	return 0;
 }
 
-
+//function to test *
 void mult(List aList, List bList) {
 	char choice;
 	int num;	
@@ -112,6 +114,7 @@ void mult(List aList, List bList) {
 	}	
 }
 
+//function to test /
 void div(List aList, List bList) {
 	char choice;
 	int num;	
@@ -145,21 +148,35 @@ void div(List aList, List bList) {
 }
 
 
+//function to test +
 void add(List aList, List bList) {
-	cout << aList << " + " << bList << " = " << aList+bList << endl;
+	try {
+		cout << aList << " + " << bList << " = " << aList+bList << endl;
+	}
+	catch (ListIndexOutOfRangeException & e) {
+		cerr << e.what();
+	}
 }
 
 
+//function to test -
 void sub(List aList, List bList) {
-	cout << aList << " - " << bList << " = " << aList-bList << endl;
+	try {
+		cout << aList << " - " << bList << " = " << aList-bList << endl;
+	}
+	catch (ListIndexOutOfRangeException & e) {
+		cerr << e.what();
+	}
 }
 
+//function to test ++list
 void pre(List aList, List bLIst) {
 	cout << "++" << aList << " * 2 = "; 
 	cout << ++aList * 2 << endl;
 	cout << " and the list is now " << aList << endl;
 }
 
+//function to test list++
 void post(List aList, List bList) {
 	cout << bList;
 	cout  << "++" << " * 2 = " << bList++ * 2 << endl;
