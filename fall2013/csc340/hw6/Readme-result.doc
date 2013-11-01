@@ -1,0 +1,59 @@
+***hw6 Readme***
+To compile and run the program first use the make file by entering
+
+	$ make
+
+then to run enter
+
+	$ ./hw6
+
+Then follow the prompts, see example below:
+
+(percise)aryner@localhost:~/school/fall2013/csc340/hw6$ make clean
+rm -f hw6 *.o *~
+(precise)aryner@localhost:~/school/fall2013/csc340/hw6$ make
+g++ -g -Wall -c hw6.cpp
+g++ -g -Wall -c hw6test.cpp
+g++ -g -Wall -o hw6 hw6.o hw6test.o
+(precise)aryner@localhost:~/school/fall2013/csc340/hw6$ ./hw6 
+***  Welcome to the hw6 test program   ***
+Use the menu below to test a function
+k = find kth largest, s = quicksort, l = find largest, r = reveseString, q = quit
+k
+Enter 10 integers
+12 43 64 75 86 13 83 98 23 65
+Enter an integer k to find the kth largest integer
+4
+The 4 largest integer is: 75
+Enter c to continue or any other key to go back
+q
+Use the menu below to test a function
+k = find kth largest, s = quicksort, l = find largest, r = reveseString, q = quit
+s
+Enter 10 integers to be sorted
+23 34 12 89 34 728 23 45 56 34
+The sorted ints are : [728,89,56,45,34,34,34,23,23,12]
+Enter c to continue or any other key to go back
+q
+Use the menu below to test a function
+k = find kth largest, s = quicksort, l = find largest, r = reveseString, q = quit
+l
+Enter 10 integers to find the largest among the group
+32 46 76 87 12 34 34 83 67 32
+The largest is: 87
+Enter c to continue or any other key to go back
+q
+Use the menu below to test a function
+k = find kth largest, s = quicksort, l = find largest, r = reveseString, q = quit
+r
+Enter a string to get to see it written backwards
+string
+gnirts
+Enter c to do this again or any other key to go back
+q
+Use the menu below to test a function
+k = find kth largest, s = quicksort, l = find largest, r = reveseString, q = quit
+q
+
+
+

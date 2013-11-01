@@ -1,3 +1,10 @@
+/*
+	Name: hw6test.cpp
+	Author: Alex Ryner
+	Date: 10/31/13
+	Description: Test for the hw6 functions
+*/
+
 #include "hw6.h"
 #include <iostream>
 #include <string>
@@ -11,12 +18,39 @@ void sortin();
 
 int main()
 {
-	findKLarge();
-//	sortin();
-//	findLargest();
-//	reverseString();
-}
+	char choice = 'c';
 
+	cout << "***  Welcome to the hw6 test program   ***" << endl;
+
+	while(choice != 'q'){
+		cout << "Use the menu below to test a function" << endl;
+		cout << "k = find kth largest, s = quicksort, l = find largest, r = reveseString, q = quit" << endl;
+		cin >> choice;
+
+		switch(choice){
+			case 'k' :
+				findKLarge();
+				break;
+			case 's' :
+				sortin();
+				break;
+			case 'l' :
+				findLargest();
+				break;
+			case 'r' :
+				reverseString();
+				break;
+			case 'q' :
+				break;
+			default :
+				cout << "Invalid option, try again" << endl;
+		}
+	}
+
+	return 0;
+}//end of main
+
+//Test for the quick sort method
 void sortin()
 {
 
@@ -39,8 +73,9 @@ void sortin()
 	if (choice == 'c')
 		sortin();
 
-}
+}//end of sortin
 
+//test for kLargest
 void findKLarge() 
 {
 	int numz[10];
@@ -56,14 +91,15 @@ void findKLarge()
 	cout << "Enter an integer k to find the kth largest integer" << endl;
 	cin >> k;
 
-	cout << "The " << k << " largest integer is: " << kLargest(numz, k-1, 0, 9) << endl;	
+	cout << "The " << k << " largest integer is: " << kLargest(numz, k-2, 0, 9) << endl;	
 	cout << "Enter c to continue or any other key to go back" << endl;
 	cin >> choice;
 	
 	if (choice == 'c')
 		findKLarge();
-}
+}//end of findKLarge
 
+//test for largest
 void findLargest()
 {
 	int numz[10];
@@ -81,8 +117,10 @@ void findLargest()
 	
 	if (choice == 'c')
 		findLargest();
-}
+}//end of findLargest
 
+
+//test for stringMirror
 void reverseString() 
 {
 	string word;
@@ -98,4 +136,4 @@ void reverseString()
 
 	if(choice == 'c')
 		reverseString();		
-}
+}//end of reverseString
