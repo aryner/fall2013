@@ -25,12 +25,8 @@ string stringMirror(string word) {
 
 //returns the largest int of the the int array numz
 int largest(int* numz, int high, int curr, int last) {
-	if(curr == last-1){
-		return (numz[curr]>numz[high])?numz[curr]:numz[high];
-	}
-	else {
-		return (numz[curr]>numz[high])?largest(numz, curr, curr+1, last):largest(numz, high, curr+1, last);
-	}
+	if(curr == last-1) return (numz[curr]>numz[high])?numz[curr]:numz[high];
+	else return (numz[curr]>numz[high])?largest(numz, curr, curr+1, last):largest(numz, high, curr+1, last);
 }//end largest
 
 //returns the kth largest int of the int array numz
