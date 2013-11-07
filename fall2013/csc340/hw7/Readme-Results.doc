@@ -1,0 +1,30 @@
+******Read me file*******
+To compile and run first use the make file:
+
+	$ make
+
+then run the executable:
+
+	$ ./list
+
+Sample results follow:
+
+akee@akee-1005HA:~/school/fall2013/csc340/hw7$ make clean
+rm -f list *.o *~
+akee@akee-1005HA:~/school/fall2013/csc340/hw7$ make
+g++ -g -Wall -c list.cpp
+g++ -g -Wall -c testList.cpp
+g++ -g -Wall -o list list.o testList.o
+akee@akee-1005HA:~/school/fall2013/csc340/hw7$ ./list 
+List A is is initially: <0,1,2,3,4> with a max starting size of 5 elements
+Now we will try inserting 95 more elements into list A to get: 
+<0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99>
+Now we will remove 90 elements:
+<0,1,2,3,4,5,6,7,8,9>
+Now we will call List bList(aList) and display the contents of our new B list:
+<0,1,2,3,4,5,6,7,8,9>
+Now we will add 5 more elements to list B:
+<0,1,2,3,4,5,6,7,8,9,10,11,12,13,14>
+Finally we wil set list A equal to list B and display the contents of list A: 
+<0,1,2,3,4,5,6,7,8,9,10,11,12,13,14>
+akee@akee-1005HA:~/school/fall2013/csc340/hw7$ 
