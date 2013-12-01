@@ -1,0 +1,26 @@
+********Readme-Results********
+
+To compile use the makefile:
+
+	$ make
+
+To run after compiling:
+	
+	$ ./list
+
+Sample output below:
+
+(precise)aryner@localhost:~/school/fall2013/csc340/hw8/Q2$ make clean
+rm -f list *.o *~
+(precise)aryner@localhost:~/school/fall2013/csc340/hw8/Q2$ make
+g++ -g -Wall -c linkedTest.cpp
+g++ -g -Wall -c linkedList.cpp
+g++ -g -Wall -o list linkedList.o linkedTest.o
+(precise)aryner@localhost:~/school/fall2013/csc340/hw8/Q2$ ./list 
+List one is: {}
+After inserting 10,9,3,7,1,6 in that order one is: {1,3,6,7,9,10}
+one.retrieve(3) returns: 1
+After removing 3 and 9: {1,6,7,10}
+Now one.retrieve(3) returns: 0
+(precise)aryner@localhost:~/school/fall2013/csc340/hw8/Q2$ 
+
