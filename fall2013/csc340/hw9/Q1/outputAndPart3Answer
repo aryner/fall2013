@@ -1,0 +1,43 @@
+When draw and erase are not virtual functions and center is called, figures
+version of draw and erase are called.  When they are virtual however
+polymorphism comes into effect and triangles version is called when it
+is a triangle object calling center and rectangles version is called
+when it is a rectangle calling the object.
+
+This works because virtual causes a runtime type check to be invoked
+so the correct version of the method is called.
+
+**********Part 1 output*************
+
+(precise)aryner@localhost:~/school/fall2013/csc340/hw9/Q1$ ./shapes 
+A triangle is being drawn...
+
+Derived class Triangle object calling center().
+Drawing a figure...
+Erasing the figure...
+Center was called
+Drawing a rectangle...
+
+Derived class Rectangle object calling center().
+Drawing a figure...
+Erasing the figure...
+Center was called
+(precise)aryner@localhost:~/school/fall2013/csc340/hw9/Q1$ 
+
+
+*********Part 2 output*************
+
+(precise)aryner@localhost:~/school/fall2013/csc340/hw9/Q1part2$ ./shapes 
+A triangle is being drawn...
+
+Derived class Triangle object calling center().
+A triangle is being drawn...
+This triangle is being erased...
+Center was called
+Drawing a rectangle...
+
+Derived class Rectangle object calling center().
+Drawing a rectangle...
+Erasing this rectangle...
+Center was called
+(precise)aryner@localhost:~/school/fall2013/csc340/hw9/Q1part2$
